@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Tip Calculator App</title>
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="js/main.js"></script>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="header">
+          <p>Bill</p>
+
+          <input
+            type="text"
+            placeholder="0"
+            class="bill"
+            maxlength="10"
+            required
+          />
+        </div>
+        <div class="select_tip">
+          <p>Select Tip %</p>
+          <div class="select_tip_btn">
+            <button type="submit" class="input" data-num="5">5%</button>
+            <button type="submit" class="input" data-num="10">10%</button>
+            <button type="submit" class="input" data-num="15">15%</button>
+            <button type="submit" class="input" data-num="25">25%</button>
+            <button type="submit" class="input" data-num="50">50%</button>
+            <div class="custom" contenteditable="true" data-text="Custom"></div>
+          </div>
+        </div>
+        <div class="people">
+          <ul>
+            <li>Number of People</li>
+            <li class="input_error_message">Can't be zero</li>
+          </ul>
+
+          <input type="text" class="no_people" placeholder="0" maxlength="2" />
+        </div>
+      </div>
+      <div class="footer">
+        <div class="amount">
+          <div class="tip">
+            <p>Tip Amount <span> / person</span></p>
+          </div>
+          <div class="cost tip_person">$0.00</div>
+        </div>
+        <div class="total">
+          <div class="total_person">
+            <p>Total <span> / person</span></p>
+          </div>
+
+          <div class="cost tip_total">$0.00</div>
+        </div>
+        <button class="reset">RESET</button>
+      </div>
+    </div>
+  </body>
+</html>
