@@ -87,7 +87,7 @@ input:active {
 }
 
 .container .no_people {
-  background-image: url(./images/icon-person.svg);
+  background-image: url(/images/icon-person.svg);
 }
 
 .select_tip_btn {
