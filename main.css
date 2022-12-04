@@ -83,7 +83,7 @@ input:active {
   outline: none;
 }
 .container .bill {
-  background-image: url(./images/icon-dollar.svg);
+  background-image: url(/images/icon-dollar.svg);
 }
 
 .container .no_people {
