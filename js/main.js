@@ -19,13 +19,23 @@ const initApp = () => {
     if (event.target.value === "0") return;
     inputBill = event.target.value;
 
-    console.log(inputBill);
+    mathOperation();
   });
 
   inputTipPercentage.forEach((button) => {
     button.addEventListener("click", () => {
+      inputTipPercentage.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+      if (button.classList.contains("custom")) {
+        button.classList.remove("active");
+      } else {
+        button.classList.add("active");
+      }
+
       inputPerc = button.dataset.num;
-      console.log(inputPerc);
+
+      mathOperation();
     });
   });
 
@@ -41,9 +51,10 @@ const initApp = () => {
     }
 
     numberOfPersons = event.target.value;
+    mathOperation();
+  });
 
-    console.log(numberOfPersons);
-
+  const mathOperation = () => {
     let result;
     const bill = parseFloat(inputBill);
     const percentage = parseFloat(inputPerc);
@@ -51,25 +62,24 @@ const initApp = () => {
     if (isNaN(persons)) return;
     if (isNaN(bill)) return;
     if (isNaN(percentage)) return;
+    result = ((percentage / 100) * bill * persons).toFixed(2);
 
-    const mathOperation = (bill, percentage, persons) => {
-      result = ((percentage / 100) * bill * persons).toFixed(2);
-    };
-    mathOperation(bill, percentage, persons);
-    console.log(result);
     outputTipTotal = result;
     outputTipTotalElem.innerText = ` $${outputTipTotal}`;
     outputTipPerPerson = (result / persons).toFixed(2);
     outputTipPerPersonElem.innerText = `$${outputTipPerPerson}`;
-  });
+  };
 
   customElem.addEventListener("input", (event) => {
     inputPerc = event.target.textContent;
 
-    console.log(inputPerc);
+    mathOperation();
   });
 
   resetButton.addEventListener("click", () => {
+    inputTipPercentage.forEach((button) => {
+      button.classList.remove("active");
+    });
     customElem.innerText = "";
     inputBill = "";
     inputBillElem.value = inputBill;

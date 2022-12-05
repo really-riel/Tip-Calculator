@@ -214,6 +214,7 @@ button:last-child:active {
   display: none;
   color: red;
 }
-.black {
-  outline: red;
+.active {
+  background-color: var(--Strong_cyan);
+  color: var(--Very_dark_cyan);
 }
